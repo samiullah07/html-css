@@ -266,13 +266,12 @@ a {
 
 .video-container {
     width: 100%;
-    max-height: 500px;
 }
 
 .carousel-item-inner {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    max-height: 500px;
+    max-height: 618px;
     height: 100vh;
     align-items: center;
 }
@@ -302,14 +301,13 @@ a {
     flex-direction: row;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
     .carousel-item-inner {
-        max-height: 400px;
+        max-height: 380px;
     }
 
     .video-container {
         width: 100%;
-        max-height: 400px;
     }
 
     .carousel-item-inner .text-area h2 {
@@ -328,15 +326,23 @@ a {
         font-size: 25px;
     }
 
-    .carousel-item-inner {
-        max-height: 205px;
-    }
-
     .video-container {
         width: 100%;
-        max-height: 205px;
     }
 }
+
+@media (max-width: 767px) {
+    .carousel-item-inner {
+        max-height: 278px;
+    }
+}
+
+@media (max-width: 410px) {
+    .carousel-item-inner {
+        max-height: 200px;
+    }
+}
+
 
 @media (max-width: 510px) {
     .carousel-item-inner .text-area h2 {
@@ -380,4 +386,14 @@ a {
 .navbar-submenu .dropdown-item:hover {
     background: linear-gradient(107.85deg, #00969E 1.08%, #09C6B2 144.46%);
     color: white;
+}
+
+.btn:hover {
+    background: linear-gradient(107.85deg, #00969E 1.08%, #09C6B2 144.46%);
+    color: white;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    width: auto;
 }
