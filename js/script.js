@@ -1,29 +1,19 @@
-var carouselElement = document.getElementById("carouselExampleCaptions");
-var carouselInstance = bootstrap.Carousel.getInstance(carouselElement);
-if (!carouselInstance) {
-    carouselInstance = new bootstrap.Carousel(carouselElement, {
-        ride: "carousel",
-        wrap: true
-    });
+const video = document.getElementById('carouselVideo');
+const carousel = document.getElementById('carouselExampleCaptions');
+
+if (document.querySelector('.carousel-item.active').contains(video)) {
+    video.play();
 }
 
-var video = document.getElementById("carouselVideo");
-if (video) {
-    video.addEventListener("ended", function () {
-        carouselInstance.next();
-    });
-}
-
-carouselElement.addEventListener('slid.bs.carousel', function (event) {
-    var currentSlide = event.relatedTarget;
-    if (currentSlide && currentSlide.querySelector("#carouselVideo")) {
-        // If the new slide has a video, reset and play it.
-        video.currentTime = 0;
+carousel.addEventListener('slid.bs.carousel', function () {
+    const activeItem = carousel.querySelector('.carousel-item.active');
+    if (activeItem.contains(video)) {
         video.play();
     } else {
-        // If there is no video, move to the next slide after 3000ms.
-        setTimeout(function () {
-            carouselInstance.next();
-        }, 3000);
+        video.pause();
     }
 });
+
+video.onload = function () {
+    video.play();
+}
