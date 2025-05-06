@@ -21,6 +21,10 @@ a {
     flex-shrink: 0;
 }
 
+.nav-link:hover:not(.btn) {
+    color: var(--primary-color) !important;
+}
+
 .text-primary {
     color: var(--primary-color) !important;
 }
